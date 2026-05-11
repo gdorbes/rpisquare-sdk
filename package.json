@@ -1,0 +1,39 @@
+{
+  "name": "rpisquare-sdk",
+  "version": "0.6",
+  "description": "(RPi)² SDK",
+  "main": "./main.mjs",
+  "exports": "./main.mjs",
+  "type": "module",
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "directories": {
+    "lib": "esm"
+  },
+  "homepage": "https://github.com/gdorbes/rpisquare-sdk",
+  "bugs": {
+    "url": "https://github.com/gdorbes/rpisquare-sdk/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gdorbes/rpisquare-sdk.git"
+  },
+  "keywords": [
+    "raspberry",
+    "raspberry-pi",
+    "gpio",
+    "libgpiod",
+    "nodejs",
+    "javascript",
+    "esm",
+    "rpisquare",
+    "(RPi)²",
+    "sdk"
+  ],
+  "author": "Guillaume DORBES",
+  "license": "MIT",
+  "dependencies": {
+    "socket.io-client": "^4.8.3"
+  }
+}
