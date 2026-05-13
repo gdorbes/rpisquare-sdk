@@ -3,9 +3,9 @@
 // -------------------------------------------------------------------
 import {spawn} from "child_process"
 import {io} from "socket.io-client"
-import {log, warn, traceCfg} from "./esm/log.mjs"
-import {ctrlC, sleep} from "./esm/ctl.mjs"
-import {suid} from "./esm/uid.mjs"
+import {log, warn, traceCfg} from "./log.mjs"
+import {ctrlC, sleep} from "./ctl.mjs"
+import {suid} from "./uid.mjs"
 
 class Rpisquare {
 
