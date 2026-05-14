@@ -1,5 +1,5 @@
 // -------------------------------------------------------------------
-// RPi² API SOCKET SDK FOR BOTH BROWSER AND NODEJS
+// RPi²  SDK FOR BOTH BROWSER AND NODEJS
 // -------------------------------------------------------------------
 import {io} from "socket.io-client"
 import {log, warn, traceCfg} from "./log.mjs"
