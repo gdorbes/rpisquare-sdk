@@ -267,7 +267,7 @@ sdk.authenticate = async (email = "", token = "") => {
         ram.agents = res.data
         log("agents loaded")
 
-        return fun.response(200, "")
+        return fun.response(200, res.data)
     } catch (error) {
         return fun.response(12, error.message)
     }
