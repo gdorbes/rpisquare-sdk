@@ -5,12 +5,13 @@
     <title>rpisquare sdk</title>
 </head>
 <body>
+<h1>rpisquare sdk</h1>
 <script src="https://cdn.socket.io/4.8.3/socket.io.min.js"></script>
 <script src="../dist/rpisquare-sdk.js"></script>
 <script type="module">
-    console.log("web sdk")
+    rpisquare.log("web sdk")
     const started = await rpisquare.sdk.authenticate("guillaume@dorbes.com", "00790033007500350041007300530062")
-    console.log("started", started)
+    log("started", started)
 </script>
 </body>
 </html>

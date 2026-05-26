@@ -47,7 +47,6 @@ let ram = {
     }
 }
 let fun = {} // Private functions
-export let sdk = {} // Public functions
 
 // -------------------------------------------------------------------
 // PRIVATE FUNCTIONS
@@ -226,14 +225,16 @@ fun.emitOperation = (serial, line, cmd, params = {}, opt) => {
 */
 // -------------------------------------------------------------------
 // PUBLIC FUNCTIONS
+
+export {log}
 /** ------------------------------------------------------------------
- * @method sdk.authenticate
+ * @method authenticate
  * @description Check user email and token then authenticate on socket server
  * @param {String} email
  * @param {String} token
  * @return {Object}
  */
-sdk.authenticate = async (email = "", token = "") => {
+export const authenticate = async (email = "", token = "") => {
     // Set trave level: warning and log
     traceCfg(2)
     log("starting sdk")
@@ -263,7 +264,7 @@ sdk.authenticate = async (email = "", token = "") => {
             email: email,
             token: token
         })
-        if (res.code !== 200)  return fun.response(12, res.msg)
+        if (res.code !== 200) return fun.response(12, res.msg)
         ram.agents = res.data
         log("agents loaded")
 
@@ -282,7 +283,7 @@ sdk.authenticate = async (email = "", token = "") => {
  * @param {Object} opt - to overwrite default console and feedback
  * @return {Number}
  */
-sdk.write = (serial, line, value, opt = {}) => {
+export const write = (serial, line, value, opt = {}) => {
     return fun.emitOperation(serial, line, "write", {toWrite: value}, opt)
 }
 
