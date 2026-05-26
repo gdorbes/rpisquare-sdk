@@ -9,9 +9,13 @@
 <script src="https://cdn.socket.io/4.8.3/socket.io.min.js"></script>
 <script src="../dist/rpisquare-sdk.js"></script>
 <script type="module">
-    rpisquare.log("web sdk")
-    const started = await rpisquare.sdk.authenticate("guillaume@dorbes.com", "00790033007500350041007300530062")
-    log("started", started)
+
+    // Short namespace
+    const r2s  = rpisquare.sdk
+
+    // Authentication with user email and room ID
+    const authenticated = await r2s.authenticate("guillaume@dorbes.com", "00790033007500350041007300530062")
+    r2s.log("agent list", authenticated.data)
 </script>
 </body>
 </html>

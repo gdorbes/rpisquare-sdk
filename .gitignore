@@ -16,6 +16,12 @@ config-rpi².json
 # Local archive
 _archive/
 
+# Local test
+test/
+
+# Rollup config
+rollup.config.js
+
 # Test packs
 *.tgz
 

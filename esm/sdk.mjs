@@ -1,8 +1,8 @@
 // -------------------------------------------------------------------
-// RPi²  SDK FOR BOTH BROWSER AND NODEJS
+// RPi² SDK FOR BOTH BROWSER AND NODEJS
 // -------------------------------------------------------------------
 import {io} from "socket.io-client"
-import {log, warn, traceCfg} from "./log.mjs"
+import {log, warn} from "./log.mjs"
 import {ctrlC, sleep} from "./ctl.mjs"
 import {suid} from "./uid.mjs"
 
@@ -225,18 +225,23 @@ fun.emitOperation = (serial, line, cmd, params = {}, opt) => {
 */
 // -------------------------------------------------------------------
 // PUBLIC FUNCTIONS
-
-export {log}
+// -------------------------------------------------------------------
+export let sdk = {}
 /** ------------------------------------------------------------------
- * @method authenticate
+ * @function sdk.log
+ * @description Timestamped console.log
+ * @argument
+ */
+sdk.log = log
+/** ------------------------------------------------------------------
+ * @function sdk.authenticate
  * @description Check user email and token then authenticate on socket server
  * @param {String} email
  * @param {String} token
  * @return {Object}
  */
-export const authenticate = async (email = "", token = "") => {
-    // Set trave level: warning and log
-    traceCfg(2)
+sdk.authenticate = async (email = "", token = "") => {
+
     log("starting sdk")
 
     // ERR 10: Invalid email address
@@ -275,7 +280,7 @@ export const authenticate = async (email = "", token = "") => {
 }
 
 /** --------------------------------------------------------------
- * @method write
+ * @function sdk.write
  * @description Set value of a remote output GPIO
  * @param {String} serial
  * @param {Number} line
@@ -283,7 +288,7 @@ export const authenticate = async (email = "", token = "") => {
  * @param {Object} opt - to overwrite default console and feedback
  * @return {Number}
  */
-export const write = (serial, line, value, opt = {}) => {
+sdk.write = (serial, line, value, opt = {}) => {
     return fun.emitOperation(serial, line, "write", {toWrite: value}, opt)
 }
 
